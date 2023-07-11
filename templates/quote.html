@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+
+{% block title %} Quote {% endblock %}
+
+
+{% block main %}
+    <div class="container d-flex justify-content-center">
+        <form action="/quote" method="post">
+            <div class="form-group">
+                <input type="text" class="form-control text-muted" placeholder="symbol" name="symbol" autocomplete="off">
+            </div>
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-primary mt-2">Submit</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

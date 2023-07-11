@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+
+{% block title %} Buy {% endblock %}
+
+{% block main %}
+    <div class="container d-flex justify-content-center">
+        <form action="/buy" method="post">
+            <div class="form-group">
+                <input type="text" class="form-control text-muted" placeholder="symbol" name="symbol" autocomplete="off">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control text-muted mt-2" placeholder="shares" name="shares" autocomplete="off">
+            </div>
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-primary mt-2">Buy</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

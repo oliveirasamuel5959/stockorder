@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+
+{% block title %} Cash {% endblock %}
+
+{% block main %}
+    <div class="container d-flex justify-content-center">
+        <form action="/cash" method="post">
+            <div class="form-group">
+                <input type="text" class="form-control text-muted" placeholder="$ cash" name="cash" autocomplete="off">
+            </div>
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-primary mt-2">Add</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

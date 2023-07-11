@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %} Portifolio {% endblock %}
+
+{% block main %}
+
+    <div class="text-center">
+        <p class="alert alert-success">Welcome, {{ username }}</p>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th class="text-start">Symbol</th>
+                <th class="text-start">Name</th>
+                <th class="text-end">Shares</th>
+                <th class="text-end">Price</th>
+                <th class="text-end">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in portifolio%}
+                <tr>
+                    <td class="text-start">{{ data[2] }}</td>
+                    <td class="text-start">{{ data[1] }}</td>
+                    <td class="text-end">{{ data[3] }}</td>
+                    <td class="text-end">$ {{ data[4] }}</td>
+                    <td class="text-end">$ {{ data[5] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class="border-0 fw-bold text-end" colspan="4">Cash</td>
+                <td class="border-0 text-end">{{ cash }}</td>
+            </tr>
+            <tr>
+                <td class="border-0 fw-bold text-end" colspan="4">TOTAL</td>
+                <td class="border-0 w-bold text-end">{{ total_cash }}</td>
+            </tr>
+        </tfoot>
+    </table>
+
+{% endblock %}

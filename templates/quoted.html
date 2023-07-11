@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+
+{% block main %}
+    {% for key, value in stock_quoted.items() %}
+        <ul class="list-group">
+            <li class="list-group-item">{{ key }} {{ value }}</li>
+        </ul>
+    {% endfor %}
+{% endblock %}

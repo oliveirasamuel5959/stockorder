@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %} History {% endblock %}
+
+{% block main %}
+    <div class="container w-100">
+        <table id="example" class="table table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th class="text-start">Type</th>
+                    <th class="text-start">Symbol</th>
+                    <th class="text-end">Shares</th>
+                    <th class="text-end">Price</th>
+                    <th class="text-end">Transacted</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for t in transactions %}
+                    <tr>
+                        <td class="text-start">{{ t[0] }}</td>
+                        <td class="text-start">{{ t[1] }}</td>
+                        <td class="text-end">{{ t[2] }}</td>
+                        <td class="text-end">$ {{ t[3] }}</td>
+                        <td class="text-end">{{ t[4] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

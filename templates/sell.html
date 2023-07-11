@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+
+{% block title %} Sell {% endblock %}
+
+{% block main %}
+    <div class="container d-flex justify-content-center">
+        <form action="/sell" method="post">
+            <div class="mb-3">
+                <!-- <input type="text" class="form-control text-muted" placeholder="symbol" name="symbol" autocomplete="off"> -->
+                <select class="form-select mx-auto w-auto" name="symbol">
+                    <option disabled selected>Symbol</option>
+                    {% for share in shares %}
+                        <option>{{ share[2] }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control text-muted mt-2 mx-auto w-auto" min="0" placeholder="Shares" name="shares" autocomplete="off">
+            </div>
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-primary mt-2">Sell</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
